@@ -34,17 +34,17 @@ for number in numbers:
 first_list = [3, 7, 9, 2, 6]
 second_list = [2, 3, 6, 7, 9]
 list_of_tuples = []
-for i, number in enumerate(second_list):
-    new_tuple = (first_list[i], i)
-    list_of_tuples.append(new_tuple)
+for num_in_second in second_list:
+    list_of_tuples.append((first_list.index(num_in_second), num_in_second))
 print(list_of_tuples)
+
 
 
 
 6.
 first_list = [3, 7, 9, 2, 6]
 second_list = [2, 3, 6, 7, 9]
-list_of_tuples = [(first_list[i], i) for i, number in enumerate(second_list)]
+list_of_tuples = [(first_list.index(i), i) for i in second_list]
 print(list_of_tuples)
 
 
@@ -61,18 +61,18 @@ while len(my_basket) <= fruits_wanted:
 print(f'My_basket = {my_basket}')
 
 
-
 8.
-nummer = 2
-while nummer <= 100:
+talet = 2
+while talet <= 100:
     delat_med = 2
-    while delat_med < nummer:
-        if nummer % delat_med == 0:
+    while delat_med < talet:
+        if talet % delat_med == 0:
             break
         delat_med += 1
     else:
-        print(nummer)
-    nummer += 1
+        print(talet)
+    talet += 1
+
 
 
 
