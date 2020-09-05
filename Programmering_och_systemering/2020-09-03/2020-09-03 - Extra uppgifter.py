@@ -39,3 +39,14 @@ for i in range(rows):
 print(result)
 
 40.
+talet = 2
+while talet <= 100:
+    delat_med = 2
+    while delat_med < talet:
+        if talet % delat_med == 0:
+            break
+        delat_med += 1
+    else:
+        print(talet)
+    talet += 1
+
