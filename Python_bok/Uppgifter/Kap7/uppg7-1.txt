@@ -1,0 +1,6 @@
+Använd en variabel summa som sätts till 0 och en räknare k som sätts till 1.
+Upprepa följande två rader så länge som k är mindre än eller lika med 100:
+        Läs nästa tal på listan och tilldela det till en variabel med namnet x
+	Öka summa med x.
+	Öka k med ett.
+Beräkna uttrycket summa/100 och visa det.

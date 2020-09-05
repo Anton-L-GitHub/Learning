@@ -1,0 +1,9 @@
+Då kommer programmet att göra flera utskrifter.
+Antag t.ex. att man skrivit in texten '123x56789'. 
+På första varvet i for-satsen undersöker man då tecknet '1' som är korrekt.
+Därför skrivs texten 'Talet är OK' ut.
+Detta upprepas på det andra och det tredje varvet, då tecknen '2' och '3' undersöks.
+På fjärde varvet undesöks tecknet 'x' som är felaktigt. 
+Därför skrivs på fjärde varvet texten 'Inget tal' ut. 
+Därefter avbryts for-satsen.
+I detta exempel kommer alltså fyra utskrifter att ske. 
