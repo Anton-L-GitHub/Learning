@@ -36,7 +36,7 @@ def prompt_add_book():
 def list_books():
     books = database.get_all_books()
     for i, book in enumerate(books):
-        print(f'B{i + 1}\n Namn: {book["name"]}\n Author: {book["author"]}\n Read: {"Yes" if book["read"] else "Nope"}')
+        print(f'B{i + 1}\n Namn: {book["name"]}\n Author: {book["author"]}\n Read: {"Yes" if book["read"] else "Nope"}\n')
 
 
 def prompt_read_book():
