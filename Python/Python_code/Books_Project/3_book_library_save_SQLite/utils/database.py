@@ -1,7 +1,7 @@
 import sqlite3
 
 """
-Concerned with storing and retrieving books from from a JSON-file.
+Concerned with storing and retrieving books to SQLite
 """
 
 
