@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="20375d58-f2c2-41d3-97a3-5d0890d363aa" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../../Programmering_och_systemering/2020-08-25/2020-08-25.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Programmering_och_systemering/2020-09-01/2020-09-01 - Uppgift A.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Programmering_och_systemering/2020-09-01/2020-09-01 - Uppgift B.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Programmering_och_systemering/2020-09-03/2020-09-03 - Extra uppgifter.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Programmering_och_systemering/2020-09-03/2020-09-03 - Första uppgifterna.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Programmering_och_systemering/2020-09-08/2020-09-08.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Programmering_och_systemering/2020-09-14/2020-09-14.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap10/läs_lista.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap10/läs_tal.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap10/skottår.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap11/godkända_elever2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap11/kopiera_fil.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap11/namnet.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap11/with_sats.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap11/ändra_i _fil.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap12/alfa.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap12/json.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap12/jämför_texter.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap12/textanalys.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap13/cirkel.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap13/cirkel_property.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap13/hus.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap13/konto.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap13/konto2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap13/kortlek.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap13/person.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap13/tjugoett.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap2/hypotenusa.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap2/kvadrat.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap2/tärning.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap3/charter.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap3/skottår.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap3/temperatur.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap4/alger.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap4/ränta.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap4/summa.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap4/while_demo.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap5/amerikanskt_datum.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap5/första_vita.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap5/räkna_blanka.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap6/fibonccci.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap6/kontantkort.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap6/mandat.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap6/matris.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap6/medelvärde.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap7/primtal.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap8/alfa.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap8/medelvärde.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap8/medelvärde2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap8/nfak.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap8/siffersumma.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap9/kortlek.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Exempel/Kap9/tjugoett.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap10/ovn10-1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap10/ovn10-2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap10/ovn10-3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap10/ovn10-4.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap11/ovn11-1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap11/ovn11-2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap11/ovn11-3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap11/ovn11-4.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap11/ovn11-5.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap11/ovn11-6.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap11/ovn11-7.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap12/ovn12-1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap12/ovn12-2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap12/ovn12-3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap13/mina svar/13.1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap13/ovn13-1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap13/ovn13-2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap13/ovn13-3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap13/ovn13-4.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap13/ovn13-5.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap13/ovn13-6.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap13/ovn13-7.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap13/ovn13-8.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap2/ovn2-1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap2/ovn2-2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap2/ovn2-3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap2/ovn2-4.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap2/ovn2-5.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap2/ovn2-6.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap3/ovn3-1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap3/ovn3-2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap3/ovn3-3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap4/ovn4-1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap4/ovn4-2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap4/ovn4-3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap4/ovn4-4.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap4/ovn4-5.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap4/ovn4-6.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap4/ovn4-7.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap5/ovn5-1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap5/ovn5-2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap5/ovn5-3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap5/ovn5-4.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap5/ovn5-5.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap5/ovn5-6.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap5/ovn5-7.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap5/ovn5-8.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap5/ovn5-9.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap6/ovn6-1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap6/ovn6-10.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap6/ovn6-2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap6/ovn6-3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap6/ovn6-4.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap6/ovn6-5.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap6/ovn6-6.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap6/ovn6-7.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap6/ovn6-8.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap6/ovn6-9.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap7/ovn7-1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap7/ovn7-2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap7/ovn7-3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap7/ovn7-4.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap7/ovn7-5.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap8/ovn8-1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap8/ovn8-10.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap8/ovn8-11.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap8/ovn8-12.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap8/ovn8-13.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap8/ovn8-2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap8/ovn8-3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap8/ovn8-4.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap8/ovn8-5.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap8/ovn8-6.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap8/ovn8-7.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap8/ovn8-8.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap8/ovn8-9.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap9/ovn9-1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap9/ovn9-2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Prov (övningar)/Kap9/ovn9-3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap10/uppg10-1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap10/uppg10-3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap11/uppg11-1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap11/uppg11-2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap11/uppg11-3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap11/uppg11-4.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap11/uppg11-5.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap12/skapa_tab.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap12/uppg12-1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap12/uppg12-2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap12/uppg12-3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap13/kortlek.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap13/upp13-6.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap13/uppg13-1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap13/uppg13-10.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap13/uppg13-11.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap13/uppg13-12.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap13/uppg13-13.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap13/uppg13-14.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap13/uppg13-15.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap13/uppg13-16.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap13/uppg13-2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap13/uppg13-3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap13/uppg13-4.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap13/uppg13-5.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap13/uppg13-6.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap13/uppg13-7.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap13/uppg13-8.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap13/uppg13-9.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap2/uppg2-1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap2/uppg2-2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap2/uppg2-3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap2/uppg2-4.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap2/uppg2-5.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap2/uppg2-6.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap2/uppg2-7.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap2/uppg2-8.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap2/uppg2-9.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap3/uppg3-1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap3/uppg3-2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap3/uppg3-3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap3/uppg3-4.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap3/uppg3-5.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap4/uppg-4-2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap4/uppg4-3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap4/uppg4-4.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap4/uppg4-5.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap4/uppg4-6.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap4/uppg4-7.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap4/uppg4-8.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap4/uppg4-9.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap5/uppg5-1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap5/uppg5-10.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap5/uppg5-2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap5/uppg5-3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap5/uppg5-4.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap5/uppg5-5.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap5/uppg5-6.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap5/uppg5-7.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap5/uppg5-8.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap5/uppg5-9.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap6/uppg6-1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap6/uppg6-2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap6/uppg6-3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap6/uppg6-4.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap6/uppg6-5.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap6/uppg6-6.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap6/uppg6-7.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap6/uppg6-8.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap7/uppg7-1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap8/uppg8-1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap8/uppg8-10.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap8/uppg8-2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap8/uppg8-3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap8/uppg8-4.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap8/uppg8-5.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap8/uppg8-6.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap8/uppg8-7.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap8/uppg8-8.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap8/uppg8-9.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap9/uppg9_1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Python_bok/Uppgifter/Kap9/uppg9_2.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="1hly7cPjw04NPCa6OMNMh04NfCn" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="restartRequiresConfirmation" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="3_book_library_save_JSON" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.app" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="20375d58-f2c2-41d3-97a3-5d0890d363aa" name="Default Changelist" comment="" />
+      <created>1600599806319</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1600599806319</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2034" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600602816275">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state x="2034" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.3440.1400@0.0.3440.1400" timestamp="1600602816275" />
+    <state width="1696" height="398" key="GridCell.Tab.0.bottom" timestamp="1600603332261">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1696" height="398" key="GridCell.Tab.0.bottom/0.0.3440.1400@0.0.3440.1400" timestamp="1600603332261" />
+    <state width="1696" height="398" key="GridCell.Tab.0.center" timestamp="1600603332261">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1696" height="398" key="GridCell.Tab.0.center/0.0.3440.1400@0.0.3440.1400" timestamp="1600603332261" />
+    <state width="1696" height="398" key="GridCell.Tab.0.left" timestamp="1600603332261">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1696" height="398" key="GridCell.Tab.0.left/0.0.3440.1400@0.0.3440.1400" timestamp="1600603332261" />
+    <state width="1696" height="398" key="GridCell.Tab.0.right" timestamp="1600603332261">
+      <screen x="0" y="0" width="3440" height="1400" />
+    </state>
+    <state width="1696" height="398" key="GridCell.Tab.0.right/0.0.3440.1400@0.0.3440.1400" timestamp="1600603332261" />
+  </component>
+</project>

@@ -8,17 +8,18 @@ class Dog_daycare:
         dog = Dog(name, age, owner, breed)
         self._dogs.append(dog)
 
-    def remove_dog(self, dog_id):  # Add more identifiers
+    def remove_dog(self, dog_id):
         for dog in self._dogs:
-            if dog._id == dog_id:
+            if str(dog._id) == dog_id:
                 self._dogs.remove(dog)
 
-    def set_boss_name(self):
-        pass
+    def set_boss_name(self, boss):
+        self._boss = boss
 
     def list_dogs(self):
         doglist = [dog for dog in self._dogs]
         return doglist
+        
 
     def __str__(self):
         return self._name
@@ -37,19 +38,19 @@ class Dog:
         Dog.id += 1
 
     def set_name(self, name):
-        name = self._name
+        self._name = name
 
     def set_age(self, age):
         # assert age >
-        age = self._age
+        self._age = age
 
     def set_owner(self, owner):
-        owner = self._owner
+        self._owner = owner
 
     def set_breed_toy(self, breed, favourite_toy):
         pass
 
-    def add_best_friend(self, best_friend):
+    def add_best_friend(self, dog, best_friend):
         if len(self._bf) >= 1:
             if best_friend._breed == 'Golden Retriever':
                 self._bf.append(best_friend)
@@ -59,8 +60,12 @@ class Dog:
             # Får max vara en annan hund OM INTE bf är en golden retriever
             pass
 
+    def __str__(self):
+        return f'ID= {self._id}| Hund: {self._name}\t{self._age}år {self._owner}\t{self._breed}'
+
     def __repr__(self):
-        return f'ID = {self._id}    | {self._name} - {self._age}år - {self._owner} - {self._breed}'
+        return self
+
 
 
 
@@ -71,18 +76,17 @@ MENU = """\n\n-------------------------------------------------
 3. Ändra hundens namn
 4. Ändra hundägare
 5. Visa alla hundar
+6. Lägg till Hundens BFF
 --ADMIN--
-6. Ändra chefen för dagiset
+9. Ändra chefen för dagiset
 
  
 Skriv in siffran på vad du vill göra:
 > """
 
 
-
-if __name__ == '__main__': # Gör till main funktion och sätt att den skall köras ifall name == main
-    from time import sleep
-    hunddagis = Dog_daycare('Vacker Tass', 'Stefan Löfven') 
+if __name__ == '__main__':  # Gör till main funktion och sätt att den skall köras ifall name == main
+    hunddagis = Dog_daycare('Vacker Tass', 'Stefan Löfven')
     while True:
         user_input = input(MENU)
         if user_input == '0':
@@ -99,18 +103,36 @@ if __name__ == '__main__': # Gör till main funktion och sätt att den skall kö
             dog_id = input('Ta bort hund\nHundens ID: ')
             hunddagis.remove_dog(dog_id)
         elif user_input == '3':
-            pass
+            dog_input = int(input('Ändra hundens namn\nHundens ID: '))
+            for dog in hunddagis.list_dogs():
+                if dog._id == dog_input:
+                    hunddagis._dogs.remove(dog)
+                    new_name = input(f'Nytt namn {dog._name}: ')
+                    dog.set_name(new_name)
+                    hunddagis._dogs.append(dog)
         elif user_input == '4':
-            pass
+            owner_input = int(input('Ändra hundens ägare\nHundens ID: '))
+            for dog in hunddagis.list_dogs():
+                if dog._id == owner_input:
+                    hunddagis._dogs.remove(dog)
+                    new_owner = input(f'Ny ägare till {dog._name}: ')
+                    dog.set_owner(new_owner)
+                    hunddagis._dogs.append(dog)
         elif user_input == '5':
             for hund in hunddagis.list_dogs():
                 print(hund)
         elif user_input == '6':
-            pass
+            dogg_bff = input('Vilken liten rackare har fått en ny kompis?')
+            for dog in hunddagis.list_dogs():
+                if dog._id == owner_input:
+                    hunddagis._dogs.remove(dog)
+                    new_owner = input(f'Ny ägare till {dog._name}: ')
+                    dog.set_owner(new_owner)
         elif user_input == '7':
             pass
-        elif user_input == '8':
-            pass
+        elif user_input == '9':
+            new_boss = input('Namn på ny chef: ')
+            hunddagis.set_boss_name(new_boss)
         else:
             print('Ej ett kommand. Försök igen!')
         input('')
