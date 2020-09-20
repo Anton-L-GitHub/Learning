@@ -1,2 +1,2 @@
-### learning_python and github
-Dumping python code while learning github/python.
+### Learning
+Dumping code while learning.
