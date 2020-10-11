@@ -6,7 +6,7 @@ books = []
 
 
 def add_book(name, author):
-    books.append({'name': name, 'author': author, 'read': False})
+    books.append({'name': name, 'author': author,})
 
 
 def mark_book_as_read(name):

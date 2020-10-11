@@ -13,7 +13,7 @@ def create_book_table():
 
 
 def add_book(name, author):
-    with open(books_file, 'a') as file:
+    with open(books_file, 'a'):
         books = get_all_books()
         books.append({'name': name, 'author': author, 'read': False})
         _save_all_books(books)
@@ -40,3 +40,5 @@ def mark_book_as_read(name):
 def delete_book(name):
     books = get_all_books()
     _save_all_books([book for book in books if book['name'] != name])
+
+

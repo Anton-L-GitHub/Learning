@@ -1,31 +1,30 @@
 from utils import database
 
-USER_CHOICE = """
-Enter:
-- 'a' to add a new book
-- 'l' to list all the books
-- 'r' to mark a book as read
-- 'd' to delete a book
-- 'q' to quit
+USER_CHOICE = """Ange..
+    '1' - Lägg till bok
+    '2' - Se alla böcker
+    '3' -
+    '4' to delete a book
 
-Choise > """
+    '0' - Avsluta
+    Choise > """
 
 
 def menu():
     user_inpuit = input(USER_CHOICE)
-    while user_inpuit != 'q':
-        if user_inpuit == 'a':
+    while user_inpuit != '0':
+        if user_inpuit == '1':
             prompt_add_book()
-        elif user_inpuit == 'l':
+        elif user_inpuit == '2':
             list_books()
-        elif user_inpuit == 'r':
+        elif user_inpuit == '3':
             prompt_read_book()
-        elif user_inpuit == 'd':
+        elif user_inpuit == '4':
             prompt_delete_book()
         user_inpuit = input(USER_CHOICE)
 
 
-def prompt_add_book():  # Pratar med utils.database.py
+def prompt_add_book():
     name = input('Book name: ')
     author = input('Book author: ')
     return database.add_book(name, author)
