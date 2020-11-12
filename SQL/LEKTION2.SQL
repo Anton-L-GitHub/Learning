@@ -160,9 +160,11 @@ SELECT
 FROM Fotboll
 
 --- 21 ---
-SELECT *
-FROM Department
-FULL JOIN Employee
-ON Department.DeptID = Employee.EmpID
-WHERE
-DDeptID IS NOT NULL
+SELECT DeptID FROM Employee
+INTERSECT
+SELECT DeptID FROM Department
+
+--- 22 ---
+SELECT DeptID FROM Department
+EXCEPT
+SELECT DeptID FROM Employee
