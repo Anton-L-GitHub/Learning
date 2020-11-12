@@ -168,3 +168,54 @@ SELECT DeptID FROM Department
 SELECT DeptID FROM Department
 EXCEPT
 SELECT DeptID FROM Employee
+
+--- 23 ---
+SELECT Count(*)
+FROM Employee
+WHERE Salary > 25000
+
+
+--- 24 ---
+select sum(salary)
+from Employee
+
+--- 25 ---
+select
+	max(salary) as 'Max lön',
+	min(salary) as 'Min lön'
+from Employee
+
+--- 26 ---
+select
+	sum(salary) as 'Lön nu',
+	sum(salary * 1.10) as 'Lön efter',
+	sum(salary * 1.10) - sum(salary) as 'Skillnad'
+from Employee
+
+--- 27 ---
+select
+	firstname as 'Person',
+	HireDate as 'Anställd datum',
+	dateadd(year, 1, Hiredate) as 'Nytt datum'
+from Employee
+
+--- 27 ---
+select
+	firstname as 'Person',
+	HireDate as 'Anställd datum',
+	dateadd(year, 1, Hiredate) as 'Nytt datum'
+from Employee
+
+--- 28 ---
+select
+    round(stdev(salary), 0) as 'Standardavvikelsen'
+from Employee
+where
+	job in ('Chef', 'VD')
+
+--- 29 ---
+select
+	firstname as 'Person',
+	HireDate as 'Anställd datum',
+	datediff(month, Hiredate, getdate()) as 'Månader anställd'
+from Employee
