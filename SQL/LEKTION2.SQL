@@ -219,3 +219,91 @@ select
 	HireDate as 'Anställd datum',
 	datediff(month, Hiredate, getdate()) as 'Månader anställd'
 from Employee
+
+
+-- Visa efternamn (Lastname) och lön (Salary) på alla som arbetar som Säljare i tabellen anställda (Employee). Sortera i bokstavsordning på efternamnet
+select
+	lastname,
+	salary
+from Employee
+where job = 'Säljare'
+order by Lastname, Firstname
+
+-- Sortera alla efter grundlön (Salary) med den högst betalde överst. Har två eller fler samma lön ska bokstavsordning på efternamn gälla. Visa hela tabellen Employee.
+select *
+from Employee
+order by Salary desc, Lastname
+
+-- Visa alla anställda efter 2000-01-01(Hiredate), med den sist anställde överst.
+select 
+	firstname,
+	Lastname,
+	HireDate
+from Employee
+where Hiredate > '2000-01-01'
+order by HireDate desc
+
+-- Räkna ut hur många kunder det finns på varje ort. Använd tabellen Customers.
+select
+	City,
+	count(*)
+from customers
+group by City
+
+
+-- Visa de orter och antalet kunder där företaget har fler än 5 kunder. Visa i fallande antal-ordning.
+select
+	City,
+	count(*) as 'Antal kunder'
+from customers
+group by City
+having count(*) > 5
+order by [Antal kunder] desc, city
+
+-- Visa de orter och antalet kunder där säljaren Carola Karlsson har fler än en kund. Sortera fallande efter antal. 
+select
+	City,
+	count(*) as 'Antal kunder'
+from Customers
+where EmpID = '8125'
+group by City
+order by [Antal kunder] desc, City
+
+-- Visa de orter och antalet kunder på orten som inte blivit tilldelad en säljrepresentant (dvs där EmpID är NULL).
+select
+	City,
+	count(city) as 'Antal kunder'
+from Customers
+where EmpID is null
+group by City
+order by [Antal kunder] desc, city
+
+-- Visa namnen på de populäraste blommorna följt av antalet. De mest sålda blommorna ska vara överst. Använd tabellen OrderDetails.
+select 
+	name as 'Blomma',
+	sum(Amount) as 'Antal'
+from OrderDetails
+where IsDeliveryItem = 0
+group by name
+order by 2 desc
+
+-- Det kanske inte är lönsamt att ha alla typer av blommor på lager. Visa de buketter som sålts 3 gånger eller färre.
+select 
+	name as 'Blomma',
+	sum(Amount) as 'Antal'
+from OrderDetails
+where IsDeliveryItem = 0
+group by name
+having sum(Amount) <= 3
+order by 2 desc
+
+-- Visa intäkt per artikel (oavsett om det är en bukett eller frakt) med den mest inkomstbringande artikeln överst. Visa tre kolumner: artikelns namn, intäkt och antal sålda artiklar.
+
+select
+	name as 'Name',
+	sum(Amount * Price) as 'Intäkt',
+	sum(Amount) as 'Antal'
+from OrderDetails
+where IsDeliveryItem = 0
+group by name
+order by Intäkt desc, Name
