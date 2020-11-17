@@ -307,3 +307,170 @@ from OrderDetails
 where IsDeliveryItem = 0
 group by name
 order by Intäkt desc, Name
+
+-- Ta reda på var alla anställda arbetar med hjälp av tabellerna Employee och Department. Visa efternamn (Lastname), lön (Salary), avdnummer (DeptID) och arbetsplats (Location). Sortera på arbetsplats och namn.
+select
+	Employee.Firstname,
+	Employee.Lastname,
+	Department.DeptID,
+	Department.Location
+from Employee
+	inner join Department
+	on Employee.DeptID = Department.DeptID
+
+
+-- Samma som ovan, men visa även de avdelningar som inte har några anställda.
+
+select
+	Employee.Firstname,
+	Employee.Lastname,
+	Department.DeptID,
+	Department.Location
+from Employee
+	right join Department
+	on Employee.DeptID = Department.DeptID
+
+
+-- Samma som 1, men ta bara med de som arbetar i Stockholm.
+select
+	Employee.Firstname,
+	Employee.Lastname,
+	Department.DeptID,
+	Department.Location
+from Employee
+	inner join Department
+	on Employee.DeptID = Department.DeptID
+where
+	Department.Location = 'Stockholm'
+
+
+
+-- Vad heter avdelningen där Smith arbetar?
+	-- Subquery
+	select deptname from Department
+	where DeptID = (
+		select deptid from Employee
+		where lastname like 'smith%'
+		)
+
+-- Lista alla anställningsnummer (EmpID), efternamn (Lastname) och chefens anställningsnummer (ManagerID) från tabellen Employee. Använd vanlig SELECT!
+select 
+	empid,
+	lastname,
+	managerid
+from Employee
+
+-- Samma som uppgift 5 men ta även med namnet för chefen (en egenkoppling på Employee-tabellen).
+select 
+	e.empid,
+	e.Lastname,
+	e.ManagerID,
+	m.lastname as 'CHEF'
+from Employee e
+inner join Employee m
+on e.ManagerID = m.EmpID
+
+
+-- Som uppgift 5 men se till att även de som inte har någon chef kommer med i listan. (Yttre koppling)
+
+
+-- Som uppgift 6 men lägg till kolumnerna för de anställdas  och chefernas lön. Gör en restriktion så att endast anställda som tjänar mer än sin chef kommer med.
+
+
+
+-- Ta reda på anställningsnummer och efternamn för alla chefer och räkna ut medellönen för de personer som är direkt underställd respektive chef. Visa i ett svar.
+-- FEL!!
+select
+	e.empid,
+	e.Lastname,
+	e.ManagerID,
+	m.lastname as 'CHEF',
+	m.salary as 'LÖN'
+from Employee e
+	inner join Employee m
+on e.ManagerID = m.EmpID
+group by m.EmpID, m.Lastname
+
+-- Visa namn och jobb på som har samma arbete som CLARK.
+-- FEL!!
+select *
+from employee
+where job = 
+(
+	select * from Employee
+	where lastname = 'clark'
+)
+
+-- Vilken säljare tjänar mest inklusive provision (Commission)? Observera att det kan förekomma NULL-värden. Hantera i så fall dessa!
+
+select * from Employee
+	where salary + ISNULL(Commission, 0) =
+	(
+	select max(Salary + isnull(commission, 0)) from employee
+	where job = 'Säljare'
+	)
+
+-- Vilka anställda har BLAKE som chef?
+
+select *
+from employee
+where managerid = (
+	select empid from Employee
+	where lastname = 'Blake')
+
+-- Vilka arbetar i samma stad som Smith?
+select e2.* from employee e
+inner join Department d
+on e.DeptID = d.DeptID
+right join Department d2
+on d.Location = d2.Location
+inner join Employee e2
+on d2.DeptID = e2.DeptID
+where e.Lastname like 'smith%'
+
+
+-- Visa avdelningsnamn och lönekostnad per avdelning. I lönekostnaden ingår provision.
+
+select
+	deptName,
+	sum(Salary + ISNULL(Commission, 0)) as Lönekost
+from Employee e
+join Department d
+on e.deptid = d.deptid
+group by DeptName
+
+-- Samma som ovan men ta bara med de avdelningar som har fler än tre anställda. 
+
+select
+	deptName,
+	sum(Salary + ISNULL(Commission, 0)) as Lönekost
+from Employee e
+join Department d
+on e.deptid = d.deptid
+group by DeptName
+having count(lastname) > 3
+
+
+
+-- Samma som ovan, men visa även avdelningsort (Location). 
+
+select
+	location,
+	sum(Salary + ISNULL(Commission, 0)) as 'Lönekostnad'
+from Employee e
+join Department d
+on e.deptid = d.deptid
+group by DeptName
+having count(lastname) > 3
+
+
+-- Visa anställningsdatum för den längsta respektive den kortaste tid någon har varit anställd på varje ort. 
+
+select	
+	location,
+	convert(varchar(10), max(hiredate), 120) as 'Kortast',
+	min(HireDate) as 'Längst'
+from Employee e
+inner join Department d
+on e.DeptID = d.DeptID
+group by Location
