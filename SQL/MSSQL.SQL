@@ -1,0 +1,346 @@
+-- 1.  Tabellen Employee innehåller anställda. Visa samtliga rader (alla kolumner och alla rader) som finns i tabellen Employee.
+select *
+from Employee
+
+-- 2.  Visa alla rader som finns i Employee-tabellen, där den anställde har anställningsdatum lika med 2002-12-03.Obs! Skriv samma datumformat som i tabellen!
+select *
+from Employee
+where HireDate = '2002-12-03'
+
+-- 3.  Visa alla personer i Employee-tabellen som anställdes senare än 2000-01-01.
+select *
+from Employee
+where HireDate > '2000-01-01'
+
+-- 4.  Visa enbart kolumnerna efternamn (lastname), jobb (job), lön (salary) och bonus (commission) för de personer som har mer än 20000 kr i lön.
+select
+	Firstname,
+	Lastname,
+	Salary,
+	Commission
+from Employee
+where Salary > 20000
+
+-- 5. Visa för- och efternamn (firstname respektive lastname) och inkomst för alla säljare. Inkomsten är summan av lön (salary) och bonus (commission). Slå upp ISNULL i hjälpen om du hinner!
+select
+	Firstname,
+	Lastname,
+	Salary + isnull(Commission, 0) as 'Inkomst'
+from Employee
+where job = 'Säljare'
+
+-- 6. De personer som har mindre än 10000 kr i grundlön (salary) ska eventuellt få ett lönelyft på 10%. Visa efternamn, lön och nya lönen för dessa. Benämn kolumnerna Efternamn, Lön och NyLön.
+select 
+	Lastname as 'Efternamn',
+	Salary as 'Lön',
+	Salary * 1.1 as 'Nylön'
+from Employee
+where Salary < 10000
+
+-- 7. Visa hur mycket varje person ska betala i skatt. Antag att man betalar 30% i skatt. Visa Efternamn, Inkomst och Skatt.
+select
+	Lastname,
+	Salary + isnull(Commission, 0) as 'Inkomst',
+	(Salary + isnull(Commission, 0)) * 0.30 as 'Skatt'
+from Employee
+
+-- 8. Visa Efternamn, Lön, Bonus på alla anställda som inte har någon bonus.
+select
+	Lastname,
+	Salary,
+	Commission
+from Employee
+where
+	Commission is null
+
+-- 9. Visa Lastname, Job och Salary på alla chefer som heter JONES.
+select
+	Lastname,
+	Job,
+	Salary
+from Employee
+where job = 'Chef' and (firstname = 'Jones' or Lastname = 'Jones')
+
+-- Överkurs
+-- 10. Visa Lastname, Job och Salary på alla chefer som INTE heter JONES.
+select
+	Lastname,
+	Job,
+	Salary
+from Employee
+where job = 'Chef' and not (firstname = 'Jones' or Lastname = 'Jones')
+
+-- 11. Visa alla rader vars efternamn börjar på ’J’ eller innehåller ’AR’.
+select
+	*
+from Employee
+where Lastname like 'J%' or lastname like '%AR%'
+
+
+-- 12. Gör en e-mail-lista genom att konkatenera för- och efternamn. Formatet ska vara förnamn.efternamn@nackademin.se. Slå upp LOWER i hjälpen om du hinner!
+select
+	lower(replace(firstname + '.' + Lastname + '@nackademin.se', ' ', '.'))
+from Employee
+
+-- 13. Visa Efternamn, Anställningsnummer (EmpID) på alla anställda som har ett anställningsnummer mellan 7600 och 7800.
+select
+	Lastname,
+	EmpID
+from Employee
+where EmpID between 7600 and 7800
+
+-- 14. Visa alla rader för de anställda som tjänar 11.000, 28.000 eller 30.000 kr i månaden.
+select
+	*
+from Employee
+where Salary in (11000, 28000, 30000)
+
+-- 15. Visa samtliga varianter på namn från tabellerna fotboll och ishockey. Resultatet ska vara utan dubbletter.
+select
+	namn
+from Fotboll
+union
+select
+	namn
+from Ishockey
+
+-- 16. Visa alla fotbolls- och ishockeyspelare inklusive dubbletter.
+select
+	namn
+from Fotboll
+union all
+select
+	namn
+from Ishockey
+
+-- 17. Visa vilka orter som företaget har kontor i (utan dubbletter). Tabellen är Department.
+select
+    distinct [Location]
+from Department
+
+-- 18. Visa namnen (namn) på alla spelare som både spelar fotboll och ishockey.
+select
+	namn
+from Fotboll
+intersect
+select
+	namn
+from Ishockey
+-- 19. Visa namnen på de spelare som bara spelar fotboll.
+select
+	namn
+from Fotboll
+except
+select
+	namn
+from Ishockey
+-- 20. Visa namnen på de spelare som bara spelar ishockey.
+select
+	namn
+from Ishockey
+except
+select
+	namn
+from Fotboll
+
+-- 21. Visa de avdelningar (DeptID) som har några anställda.
+
+select *
+from Department
+where DeptID in
+(	select DeptID
+	from Employee )
+
+-- 22. Visa de avdelningar som inte har några anställda.
+select *
+from Department
+where DeptID not in 
+(	select DeptID
+	from Employee)
+
+-- ——— NY LEKTION 
+-- 1.Ange hur många anställda som har en grundlön som är mer än 25000 kr.
+select
+	count(*) as 'Antal anställda'
+from Employee
+where Salary > 25000
+
+-- 2.Summera alla anställdas grundlöner.
+select
+	sum(salary)
+from Employee
+
+-- 3.Hur mycket tjänar den som tjänar mest respektive minst i företaget?
+select
+	max(salary) as 'Max lön',
+	min(salary) as 'Min lön'
+from Employee
+
+-- 4.Ange den totala kostnaden för samtliga anställdas grundlöner om resp persons grundlön höjs med 10%. Visa även skillnaden i kronor mot den gamla lönen.
+select
+	sum(salary) as 'Lön idag',
+	sum(salary) * 1.1 as 'Löneförhöjning',
+	sum(salary) * 1.1 - sum(salary) as 'Skillnad'
+from Employee
+
+-- 5.Flytta fram anställningsdatum ett år för alla anställda. Visa det som nytt anställningsdatum i svarstabellen.
+select
+	EmpID,
+	Firstname,
+	Lastname,
+	convert(varchar(10), HireDate, 120),
+	convert(varchar(10), dateadd(year, 1, hiredate), 120)
+from Employee
+
+-- 7.Beräkna standardavvikelsen för lönen till alla chefer (Chef eller VD). Slå upp i hjälpen!
+select
+	round(stdev(Salary), 0)
+from Employee
+where job in ('Chef', 'VD')
+
+-- 8.Beräkna antalet månader mellan dagens datum och de anställdas anställningsdatum i Employee.
+select
+	*,
+	datediff(MONTH, HireDate, getdate()) as 'Månader anställd'
+from Employee
+
+
+-- 9.Fyll ut med understreck _ till höger om efternamn. Totala stränglängden för kolumnen ska vara 15.
+--1
+select
+	left(lastname + '_____________', 15)
+from Employee
+
+--2 
+select
+	lastname + replicate('_',(15-len(lastname)))
+from Employee
+
+-- 10.Byt jobb på alla som är Kontorist till Assistent
+select
+	firstname,
+	Lastname,
+	replace(job, 'Kontorist', 'Assistent') as 'Job'
+from Employee
+
+
+-- 11.Skriv allas namn (lastname) med versal första bokstav, resten gemena.
+
+select
+	upper(left(lastname, 1)) + lower(right(Lastname, (len(lastname)-1)))
+from Employee
+
+
+-- 12.Skapa både för- och efternamn i en kolumn, och en signatur i nästa kolumn. Signaturen ska vara versaler och bestå av första två bokstäverna i förnamn resp efternamn (Göran Persson skulle få signaturen GÖPE). 
+
+
+-- 13.Byt ut sista bokstaven i namnet mot en * på alla som arbetar på avdelning 30.
+
+
+-- 14.Visa hur många år den som arbetat längst respektive kortast tid på företaget har arbetat.
+
+
+-- 15.Visa namnet BLAKE i stället för 7698 för de som har BLAKE som chef, annars visas bara MGR. Visa ENAME, JOB, MGR. Obs! Använd CASE (i Oracle decode).
+
+
+-- Överkurs
+
+
+-- 16.Visa hur många dagar längre den som arbetat längst på företaget har arbetat, jämfört med den som arbetat kortast tid.
+
+
+-- ——
+
+
+
+
+
+-- 1.Visa efternamn (Lastname) och lön (Salary) på alla som arbetar som Säljare i tabellen anställda (Employee). Sortera i bokstavsordning på efternamnet
+
+
+-- 2.Sortera alla efter grundlön (Salary) med den högst betalde överst. Har två eller fler samma lön ska bokstavsordning på efternamn gälla. Visa hela tabellen Employee.
+
+
+-- 3.Visa alla anställda efter 2000-01-01(Hiredate), med den sist anställde överst.
+
+
+-- 4.Räkna ut hur många kunder det finns på varje ort. Använd tabellen Customers.
+
+
+-- 5.Visa de orter och antalet kunder där företaget har fler än 5 kunder. Visa i fallande antal-ordning.
+
+
+-- 6.Visa de orter och antalet kunder där säljaren Carola Karlsson har fler än en kund. Sortera fallande efter antal. 
+
+
+-- 7.Visa de orter och antalet kunder på orten som inte blivit tilldelad en säljrepresentant (dvs där EmpID är NULL).
+
+
+-- 8.Visa namnen på de populäraste blommorna följt av antalet. De mest sålda blommorna ska vara överst. Använd tabellen OrderDetails.
+
+
+-- 9.Det kanske inte är lönsamt att ha alla typer av blommor på lager. Visa de buketter som sålts 3 gånger eller färre.
+
+
+-- 10.Visa intäkt per artikel (oavsett om det är en bukett eller frakt) med den mest inkomstbringande artikeln överst. Visa tre kolumner: artikelns namn, intäkt och antal sålda artiklar.
+
+
+-- ———
+
+
+
+
+
+-- 1.Ta reda på var alla anställda arbetar med hjälp av tabellerna Employee och Department. Visa efternamn (Lastname), lön (Salary), avdnummer (DeptID) och arbetsplats (Location). Sortera på arbetsplats och namn.
+
+
+-- 2.Samma som ovan, men visa även de avdelningar som inte har några anställda.
+
+
+-- 3.Samma som 1, men ta bara med de som arbetar i Stockholm.
+
+
+-- 4.Vad heter avdelningen där Smith arbetar?
+
+
+-- 5.Lista alla anställningsnummer (EmpID), efternamn (Lastname) och chefens anställningsnummer (ManagerID) från tabellen Employee. Använd vanlig SELECT!
+
+
+-- 6.Samma som uppgift 5 men ta även med namnet för chefen (en egenkoppling på Employee-tabellen).
+
+
+-- 7.Som uppgift 5 men se till att även de som inte har någon chef kommer med i listan. (Yttre koppling)
+
+
+-- 8.Som uppgift 6 men lägg till kolumnerna för de anställdas  och chefernas lön. Gör en restriktion så att endast anställda som tjänar mer än sin chef kommer med.
+
+
+-- 9.Ta reda på anställningsnummer och efternamn för alla chefer och räkna ut medellönen för de personer som är direkt underställd respektive chef. Visa i ett svar.
+
+
+-- 10.Visa namn och jobb på som har samma arbete som CLARK.
+
+
+-- 11.Vilken säljare tjänar mest inklusive provision (Commission)? Observera att det kan förekomma NULL-värden. Hantera i så fall dessa!
+
+
+-- 12.Vilka anställda har BLAKE som chef?
+
+
+-- 13.Vilka arbetar i samma stad som Smith?
+
+
+-- 14.Visa avdelningsnamn och lönekostnad per avdelning. 
+
+
+-- I lönekostnaden ingår provision.
+
+
+-- 15.Samma som ovan men ta bara med de avdelningar som har fler än tre anställda. 
+
+
+-- 16.Samma som ovan, men visa även avdelningsort (Location). 
+
+
+-- 17.Visa anställningsdatum för den längsta respektive den kortaste tid någon har varit anställd på varje ort. 
+
