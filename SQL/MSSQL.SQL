@@ -344,3 +344,155 @@ from Employee
 
 -- 17.Visa anställningsdatum för den längsta respektive den kortaste tid någon har varit anställd på varje ort. 
 
+
+-- ——— LEKTION 6
+
+-- 1.Lägg till en rad med följande värden i tabellen COUNTRY
+--   CountryId:  BRA Country:  BrasilienPopulation:    140000000 Government:  Demokrati
+
+begin tran
+insert into country (CountryID, Country, Population, Government)
+values('BRA','Brasilien', 140000000, 'Demokrati')
+
+rollback tran
+
+-- 2.Lägg till Rio de Janeiro i CITY-tabellen. Rio de Janeiro har 10 miljoner invånare.
+
+begin tran
+insert into city (City, CountryId, Population)
+values('Rio de Janeiro', 'BRA', 10000000)
+
+rollback tran
+
+-- 3.Lägg till Umeå (40000 invånare), Norrköping (115000 invånare) och Örebro (90000 invånare) utan att ange kolumnnamn i Insert-satsen.
+
+begin tran
+insert into city
+values
+('Umeå', 'SWE', 40000),
+('Norrköping', 'SWE', 115000),
+('Örebro', 'SWE', 90000)
+
+rollback tran
+
+-- 4.Byt ut den svenska beteckningen (COUNTRYID) mot SVE i COUNTRY- och CITY-tabellerna.
+
+begin tran
+update city
+	set CountryId = 'SVE'
+	where CountryId = 'SWE'
+update country
+	set CountryId = 'SVE'
+	where CountryId = 'SWE'
+rollback tran
+
+-- 5.Det finns ett land och en stad där invånarantalet saknas. Uppdatera dessa kolumner med lämpliga (eller påhittade) värden.
+
+begin tran
+update city	
+	set Population = 275524
+	where CountryId = 'JUG' and city = 'Sarajevo'
+update country	
+	set Population = 10304827
+	where CountryId = 'JUG' and country = 'Jugoslavien' and Population is null
+rollback tran
+
+-- 6.Uppdatera befolkningsmängden för alla länder och städer med 100 procent.
+
+begin tran
+update city
+	set Population *= 2
+update country
+	set Population *= 2
+rollback tran
+commit tran
+
+
+-- 7.Lägg till alla städer från Customers-tabellen i City-tabellen. Utgå från att alla städer som finns i Customers-tabellen finns i Sverige. Ange inget invånarantal.
+
+begin tran
+insert into city (City, CountryId)
+select
+	city,
+	'SVE'
+from Customers
+rollback tran
+commit tran
+
+
+-- 8.Ta bort de rader som lades till ovan.
+begin tran
+delete from city
+where Population is null
+
+-- 9.Lägg till städer från Customers-tabellen i City-tabellen, men se till att du inte lägger in dubbletter. Undvik också att skapa dubbletter (d v s lägg inte in en stad som redan finns).
+
+begin tran
+insert city (City, CountryId)
+	
+	select distinct city, 'SVE'
+	from Customers
+	where city collate Finnish_Swedish_CI_AI not in(
+	select city from city)
+
+rollback tran
+commit tran
+
+-- 10.Sätt alla befolkningstal i Country-tabellen så att summan av befolkningen i de olika städerna utgör hela befolkningen i landet, d v s SUM(City.Population) = Country.Population för varje land. 
+--GÖR OM
+
+begin tran
+update country
+set Population =
+(
+	select sum(isnull(population, 0))
+	from city
+	where country.CountryId = city.CountryId
+	group by CountryId
+)
+
+rollback tran
+
+-- 11.Uppdatera lönen för alla anställda som arbetar i Stockholm med 30 %.
+--GÖR OM
+begin tran
+
+update Employee
+set Salary = salary * 1.3
+where deptid = 
+(
+	select DeptID
+	from Department
+	where location = 'Stockholm'
+)
+rollback tran
+
+-- 12.Uppdatera STEVE MILLER, så namnet är med inledande versal och resten gemener, d v s Steve Miller.
+-- GÖR OM
+begin tran
+update Employee
+	set firstname = 'Steve', lastname = 'Miller'
+where EmpID = 7934
+rollback tran
+
+-- 13.Lägg till en anställd i Employee-tabellen. Valfritt namn, jobb, lön och avdelning.
+begin tran
+insert Employee (empid, firstname, lastname, job, Salary, DeptID)
+values(1252, 'Pelle', 'Svanslös', 'CEO', 1000000, 50)
+rollback tran
+
+select * from Employee
+
+-- 14.Ta bort alla rader i Department-tabellen. Går det? Borde det gå? Vad händer i så fall med raderna i Employee-tabellen?
+
+begin tran
+
+
+rollback tran
+
+
+-- •Till sist ska vi återställa tabellerna. Det gör vi med:
+
+
+
+select * from city
