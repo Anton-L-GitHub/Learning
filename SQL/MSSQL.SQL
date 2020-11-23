@@ -496,3 +496,210 @@ rollback tran
 
 
 select * from city
+
+
+--- Skapa en tabell med namnet ANST, som är en kopia på tabellen Employee
+select *
+into ANST
+from Employee
+
+
+-- Ändra kolumnen Lastname i tabellen ANST till VARCHAR(50). Skriv kommandot SP_HELP ANST för att se tabellens engenskaper
+
+SP_HELP ANST
+select * from ANST
+
+alter table ANST
+alter column lastname varchar(50)
+
+
+--- Lägg till en ny kolumn MANAGER CHAR(1) i tabellen ANST
+
+alter table anst
+add manager char(1)
+
+
+-- Uppdatera tabellen ANST och sätt ett 'y' i manager-columnen fr de som har några anställda underställda sig.
+
+update ANST
+set manager = 'Y'
+where EmpId in (
+    select managerId
+    from ANST
+)
+
+-- Uppdatera tabellen ANST och sätt ett 'N' i manager-columnen för de som INTE har några anställda underställda sig.
+
+update ANST
+set manager = 'N'
+where EmpId not in (
+    select managerId
+    from ANST
+)
+
+-- Ändra kolumnen MANAGER i tabbellen ANST till NOT NULL.
+alter table anst
+alter column manager char(1) not null
+
+-- Skapa en kopia av tabllen department, namnge den AVD
+select *
+into avd from Department
+
+-- Skapa en primär nyckel på kolumnen DeptID i tabellen AVD
+alter table avd
+add primary key(deptid)
+
+-- Skapa en referial integrity constraint mellan tabellerna ANST och AVD.
+-- Alltså en främmande nyckel på kolymnen deptno i ANST. Namnge den FK_DEPTNUM
+
+alter table anst
+add constraint fk_deptnum foreign key (deptid)
+references avd(deptid)
+
+
+-- Ta bort avdelning 10 från tablellen AVD. Gick det?
+delete from avd
+where DeptID = 10
+
+-- Ta bort constraint FK_DEPTNUM
+alter table anst
+drop constraint FK_DEPTNUM
+
+-- Ta bort avdelning 10 från tablellen AVD. Gick det?
+delete from avd
+where DeptID = 10
+
+-- Ta bort tabellerna AVD och ANST
+drop table avd
+drop table anst
+
+
+-- skapa en tabell; totalinfo. Den ska innehålla alla kolumner från Employee och Department. Ta endast med DeptId en gång. 
+-- Vilka fördelar respektive nackledar fnns det med denna enda tabell istället för två tabbeller Employee och Department=
+
+
+select EmpID, Firstname, Lastname, Job, ManagerID, HireDate, Salary, Commission, e.DeptID, DeptName, Location
+into totalinfo
+from Employee e
+inner join Department D
+on e.DeptID = d.DeptID
+
+
+--- NY lektion
+
+
+-- 1. Skapa en vy baserad på tabellen Customers och kalla den VY1. Ta med kolumnerna Cust_ID, Firstname, Lastname, City och sätt egna namn på kolumnerna.  
+go
+create view VY1 (Kundnr, Förnamn, Efternamn, Stad) as
+	select
+		Cust_ID,
+		FirstName,
+		LastName,
+		city
+	from Customers
+go
+
+-- 2. Gör en vy av Employee- och Department-tabellerna och kalla den VY2. Den ska innehålla alla anställda som tjänar mer än 10 000. Ta med kolumnerna anställningsnr, efternamn, jobb, lön och avdelningsnamn.
+go
+create view VY2 (Anställningsnr, Efternamn, Jobb, Lön, avdelningsnamn) as
+	select
+		EmpID,
+		Lastname,
+		Job,
+		Salary,
+		d.DeptName
+	from Employee e
+	join Department d
+	on e.DeptID = d.DeptID
+	where Salary > 10000
+go
+-- 3. Skapa VY3 baserad på VY2 där lönen är omvandlad till dollar. En dollar är värd 7.50 skr.
+go
+create view VY3 as
+	select
+		Anställningsnr,
+		Efternamn,
+		Jobb,
+		cast(Lön / 7.5 as int) as 'Lön i dollar',
+		avdelningsnamn
+	from VY2
+go
+-- 4. Ta bort vyerna VY1, VY2 och VY3.
+drop view VY1, VY2, VY3
+
+-- 5. Skapa en vy VY5 av Employee-tabellen där man slår ihop Lön (salary) och Bonus (commission) till en kolumn. Ta med efternamn, jobb och den nya lönekolumnen.
+go
+create view vy5 as
+	select 
+		Lastname,
+		job,
+		Salary + isnull(commission, 0) as 'Nylön'
+	from Employee
+
+
+-- 6. Se till att de som inte har någon bonus ändå får med sin lön i den nya kolumnen.
+go
+create view VY6 as
+	select 
+		Lastname,
+		job,
+		Salary + isnull(commission, 0) as 'Nylön'
+	from Employee
+
+-- 7 .Samma som ovan men lägg till en kolumn som visar varje anställds chef. De som inte har någon chef får texten ’The Boss’ i stället.
+go
+create view VY7 as
+	select 
+		w.Lastname,
+		w.job,
+		w.Salary + isnull(w.commission, 0) as 'Nylön',
+		isnull(m.Lastname, 'The Boss') as 'Chef'
+	from Employee w join Employee m
+	on w.ManagerID = m.EmpID
+go
+-- 8. Skapa en vy som visar avdelning, plats, antal anställda, medellönen och maxlönen för varje avdelning. 
+go
+create view VY8 (Avd, plats, antal, medelön, maxlön) as
+	select 
+		DeptName,
+		Location,
+		count(Lastname),
+		avg(Salary),
+		max(Salary)
+	from Employee e join Department d
+	on e.DeptID = d.DeptID
+	group by DeptName, Location
+go
+
+
+-- 9. Skapa en vy som talar om vad varje anställd ska betala i skatt varje månad. Antag att man betalar 30% i skatt. Ta med kolumnerna Namn(lastname) och skatt. De som har bonus (comm) ska betala 50% i skatt på sin bonus men bara 30% på lönen.
+go
+create view VY9 as
+	select
+		lastname as 'Namn',
+		salary * 0.3 + isnull(Commission, 0) * 0.5 as 'Skatt'
+	from Employee
+go
+-- 10. Ta bort alla vyer
+drop view VY1, VY2, VY3, VY4, VY5, VY6, VY7, VY8, VY9
+
+
+-- 11. Skapa en chefs-vy, enbart bestående av chefer, deras anställningsnummer, lön, jobbtitel, för- och efternamn samt orten där de arbetar.
+go
+create view chefsvy as
+	select
+		EmpID
+		Salary,
+		job,
+		firstname,
+		lastname,
+		Location
+	from Employee e join Department d
+	on e.DeptID = d.DeptID
+	where e.EmpID in 
+	(
+		select
+			distinct ManagerID
+		from Employee
+	)
+go
