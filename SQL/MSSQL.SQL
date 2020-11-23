@@ -703,3 +703,38 @@ create view chefsvy as
 		from Employee
 	)
 go
+
+-----------------------------
+
+-- 1. Se till att tabellen Employee blir indexerad på lön, med högsta lönen först.
+
+create index idx_employee_salary on Employee (Salary desc)
+
+select
+	 Salary
+from Employee
+
+-- 2. Ta bort ovanstpende index.
+
+drop index Employee.idx_employee_salary
+
+
+-- 3. Skapa en kopia på Department och döp den till Dept. Ska därefter ett unikt sammansatt index på kolumnerna Deptname och Location i tabellen Dept.
+--    Försök ändra namn till Ekonomi där DeptID = 10.
+
+select * into Dept from Department
+
+create unique index udx_DeptLoc on dept(deptname, location)
+
+update dept
+set DeptName = 'Ekonimi'
+where DeptID=10
+
+select *
+from Dept
+
+-- 4. Ta bort tabellen Dept. Försvinner det index som du skapade automatiskt när tabellen tas bort?
+-- Svar ja!
+
+select * from sysindexes
+where name = 'dept'
