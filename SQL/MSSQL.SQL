@@ -738,3 +738,92 @@ from Dept
 
 select * from sysindexes
 where name = 'dept'
+
+
+----- NY LEKTION
+
+-- 1. Skapa en procedur som har en input parameter. Denna parameter ska representera Name.
+-- Om man anropar proceduren utan att ange parametern ska returvärdet vara samtliga personer i Employee.
+-- Om man anropar proceduren med värdet på parametern till A ska returvärdet vara de som har ett för- eller efternamn som startar på A.
+-- Anger man AN ska returvärdet vara de som har ett för- eller efternamn som startar på AN etc.
+
+declare @name varchar(10)
+	set @name = 's%'
+go
+create proc usp_Search (@name varchar(50) = '%') as
+begin
+	select * from Employee
+	where
+	lastname like @name or
+	firstname like @name
+end
+go
+usp_search '%'
+
+
+-- 2. Ändra tabellen Employee, och lägg till kolumner för Username och Password. Försök använda Alter table-kommandot. 
+alter table employee
+add username varchar(10)
+
+alter table employee
+add password varchar(10)
+
+select *
+from Employee
+
+-- 3.Uppdatera några användare och ge dem lämpliga Username och Password. Försök använda Update-kommandot. 
+update Employee
+set password = 'hemligt'
+
+update Employee
+set username = LEFT(Firstname, 3) + LEFT(Lastname, 3)
+
+
+-- 4. Skapa en procedur som har två input parametrar; en för Username och Password. När man anropar proceduren och dessa Username + password är korrekt, ska returvärdet vara EmpID.
+-- Är det fel ska returvärdet vara ”Wrong username” resp ”Wrong password”. 
+
+
+drop proc usp_pwdCheck
+go
+
+create proc usp_pwdCheck (@username varchar(10), @pwd varchar(10))
+as 
+begin
+
+
+	--deklarera variabler
+    declare @FoundUsername varchar(10)
+    declare @FoundPwd varchar(10)
+    declare @EmpID int
+
+
+    --tilldela värden
+    select 
+        @EmpID = EmpID,
+        @FoundUsername = username,
+        @FoundPwd = password
+    from Employee
+    where username = @username
+
+--debug
+select @EmpID, @FoundUsername, @FoundPwd
+
+    --användare hittas inte
+    if @FoundUsername is null
+    begin
+        select 'Wrong username' as Returnvalue
+        return
+    end
+
+	-- användare finns, kolla lösenord
+	if @FoundPwd = @pwd
+		select @EmpID as Returnvalue
+	else
+		select 'Bad Password' as Returnvalue
+
+
+
+end
+go
+
+usp_pwdCheck 'andcar', 'hemligt'
