@@ -8,7 +8,6 @@ Author : Anton L
 -- Notes lägg till schemas?
 -- Indexes?
 
-
 -------------------------------------------------------------------- Skapar databas för slutuppgiften
 CREATE DATABASE Smakademin1;
 GO
@@ -129,7 +128,8 @@ VALUES
 	(40)						,
 	(30)						,
 	(20)						,
-	(10)                
+	(10)                		,
+	(0)
 
 -------------------------------------------------------------------- Inserting data into [Education]
 
@@ -184,9 +184,9 @@ VALUES('Byggnadsingenjör BIM', 0,
 
 INSERT INTO Education ([edu_name], [price], [location], [field], [type], [points])
 VALUES('Byggnadsingenjör Produktion', 0, 
-	(SELECT location_id FROM Education_location WHERE location='Distans'), 
+	(SELECT location_id FROM Education_location WHERE location='Ortsoberoende'), 
 	(SELECT field_id FROM Education_field WHERE field='Bygg'), 
-	(SELECT [type_id] FROM Education_type WHERE [type]='Distans'),
+	(SELECT [type_id] FROM Education_type WHERE [type]='Självstudier'),
 	(SELECT points_id FROM Education_points WHERE points=400))
 
 INSERT INTO Education ([edu_name], [price], [location], [field], [type], [points])
@@ -215,9 +215,9 @@ VALUES('Digital Marketing/Growth Manager', 0,
 
 INSERT INTO Education ([edu_name], [price], [location], [field], [type], [points])
 VALUES('Social Media Manager', 0, 
-	(SELECT location_id FROM Education_location WHERE location='Distans'), 
+	(SELECT location_id FROM Education_location WHERE location='Ortsoberoende'), 
 	(SELECT field_id FROM Education_field WHERE field='Kommunikation'), 
-	(SELECT [type_id] FROM Education_type WHERE [type]='Distans'),
+	(SELECT [type_id] FROM Education_type WHERE [type]='Självstudier'),
 	(SELECT points_id FROM Education_points WHERE points=310))
 
 
@@ -230,9 +230,9 @@ VALUES('UX-designer', 0,
 
 INSERT INTO Education ([edu_name], [price], [location], [field], [type], [points])
 VALUES('Energiingenjör', 0, 
-	(SELECT location_id FROM Education_location WHERE location='Distans'), 
+	(SELECT location_id FROM Education_location WHERE location='Ortsoberoende'), 
 	(SELECT field_id FROM Education_field WHERE field='Elteknik och energi'), 
-	(SELECT [type_id] FROM Education_type WHERE [type]='Distans'),
+	(SELECT [type_id] FROM Education_type WHERE [type]='Självstudier'),
 	(SELECT points_id FROM Education_points WHERE points=400))
 
 INSERT INTO Education ([edu_name], [price], [location], [field], [type], [points])
@@ -244,9 +244,9 @@ VALUES('Elingenjör konstruktion', 0,
 
 INSERT INTO Education ([edu_name], [price], [location], [field], [type], [points])
 VALUES('Tandsköterska', 65000, 
-	(SELECT location_id FROM Education_location WHERE location='Distans'), 
+	(SELECT location_id FROM Education_location WHERE location='Ortsoberoende'), 
 	(SELECT field_id FROM Education_field WHERE field='Vård och hälsa'), 
-	(SELECT [type_id] FROM Education_type WHERE [type]='Distans'),
+	(SELECT [type_id] FROM Education_type WHERE [type]='Självstudier'),
 	(SELECT points_id FROM Education_points WHERE points=0))
 
 -------------------------------------------------------------------- Inserting data into [Webcontent]
@@ -312,8 +312,8 @@ VALUES('Utbilda dig till byggnadsingenjör med inriktning mot BIM.',
 
 
 INSERT INTO Education_webcontent([title], [body_text], [Education_content])
-VALUES('Utbilda dig till byggnadsingenjör med inriktning mot produktion (distansutbildning).',
-	'Byggnadsingenjör Produktion är en distansutbildning för dig som vill arbeta med nyproduktion inom bygg. 
+VALUES('Utbilda dig till byggnadsingenjör med inriktning mot produktion (Ortsoberoendeutbildning).',
+	'Byggnadsingenjör Produktion är en Ortsoberoendeutbildning för dig som vill arbeta med nyproduktion inom bygg. 
 	Är du intresserad av att vara med och bygga nya hus? Är du samtidigt en initiativrik men också en ödmjuk innovatör och lagspelare? 
 	Då kan det här vara utbildningen för dig!',
 	(SELECT education_id FROM Education WHERE education_id=7)
@@ -344,7 +344,7 @@ VALUES('Social Media Manager (f.d. Digital kommunikatör i sociala medier)',
 
 
 INSERT INTO Education_webcontent([title], [body_text], [Education_content])
-VALUES('Social Media Manager - distans (f.d. Digital kommunikatör i sociala medier - distans)',
+VALUES('Social Media Manager - Ortsoberoende (f.d. Digital kommunikatör i sociala medier - Ortsoberoende)',
 	'Idag är sociala medier en av företagens viktigaste kommunikationskanaler. 
 	De är ständigt närvarande, oftast bara ett tryck bort med mobilen. 
 	Det sätter krav på hur kanalerna används och är utformade vilket idag är avgörande för bilden företagen förmedlar. 
@@ -396,11 +396,11 @@ VALUES('Utbilda dig till Energiingenjör',
 
 
 INSERT INTO Education_webcontent([title], [body_text], [Education_content])
-VALUES('Utbilda dig till tandsköterska på  distans under 1 år',
+VALUES('Utbilda dig till tandsköterska på  Ortsoberoende under 1 år',
 	'Har du drömt om att jobba inom vård och hälsa? Funderar du på att byta karriär och vill satsa på ett stimulerande jobb? 
 	Vill du ha varierande och intressanta arbetsuppgifter? 
 	Det finns behov av fler tandsköterskor i stora delar av landet! 
-	Ta chansen att utbilda dig till tandsköterska på distans hos oss på Nackademin – på bara 1 år!',
+	Ta chansen att utbilda dig till tandsköterska på Ortsoberoende hos oss på Nackademin – på bara 1 år!',
 	(SELECT education_id FROM Education WHERE education_id=15)
 )
 
